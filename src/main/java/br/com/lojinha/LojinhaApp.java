@@ -9,12 +9,11 @@ import java.util.List;
 
 public class LojinhaApp {
     public static void main(String[] args) {
-        Produto meuProduto = new Produto();
+        Produto meuProduto = new Produto("Sony",Tamanho.PEQUENO);
 
         meuProduto.setNome("Playstation 4");
         meuProduto.setValor(0.01);
-        meuProduto.setMarca("Sony");
-        meuProduto.setTamanho(Tamanho.GRANDE);
+        //meuProduto.setTamanho(Tamanho.GRANDE);
 
         List<String> itensInclusos = new ArrayList<String>();
         itensInclusos.add("2 controles");
@@ -23,6 +22,7 @@ public class LojinhaApp {
         meuProduto.setItensInclusos(itensInclusos);
 
         System.out.println(meuProduto.getItensInclusos().get(0));
+        System.out.println(meuProduto.getMarca());
         System.out.println(meuProduto.getTamanho());
     }
 }

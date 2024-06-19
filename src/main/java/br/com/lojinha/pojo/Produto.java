@@ -13,6 +13,10 @@ public class Produto {
     private Tamanho tamanho;
     private List<String> itensInclusos;
 
+    public Produto(String marcaInicial, Tamanho tamanhoInicial) {
+        this.marca = marcaInicial;
+        this.tamanho = tamanhoInicial;
+    }
 
     public String getMarca() {
         return marca;
