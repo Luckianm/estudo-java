@@ -1,5 +1,7 @@
 package br.com.lojinha.pojo;
 
+import java.util.List;
+
 public class Produto {
 
 
@@ -7,7 +9,7 @@ public class Produto {
     private String marca;
     private double valor;
     private String tamanho;
-    private String itensInclusos;
+    private List<String> itensInclusos;
 
 
     public String getMarca() {
@@ -31,7 +33,11 @@ public class Produto {
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        if (valor > 0){
+            this.valor = valor;
+        } else {
+            throw new IllegalArgumentException("valor nao pode ser menor que 0");
+        }
     }
 
     public String getTamanho() {
@@ -42,11 +48,11 @@ public class Produto {
         this.tamanho = tamanho;
     }
 
-    public String getItensInclusos() {
+    public List<String> getItensInclusos() {
         return itensInclusos;
     }
 
-    public void setItensInclusos(String itensInclusos) {
+    public void setItensInclusos(List<String> itensInclusos) {
         this.itensInclusos = itensInclusos;
     }
 }
